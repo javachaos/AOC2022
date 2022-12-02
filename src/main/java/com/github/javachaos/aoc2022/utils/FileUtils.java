@@ -1,4 +1,4 @@
-package com.javachaos.aoc2022.utils;
+package com.github.javachaos.aoc2022.utils;
 
 import java.io.*;
 import java.net.URISyntaxException;
@@ -24,8 +24,6 @@ public class FileUtils {
      * !!! Warning Caller is responsible for closing this resource!!!
      *
      * @param f the file to read
-     * @return
-     * @throws FileNotFoundException
      */
     public static Stream<String> lines(File f) throws FileNotFoundException {
         BufferedReader fr = new BufferedReader(new FileReader(f));

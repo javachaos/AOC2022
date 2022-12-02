@@ -1,6 +1,6 @@
-package com.javachaos.aoc2022.problems;
+package com.github.javachaos.aoc2022.problems;
 
-import com.javachaos.aoc2022.utils.FileUtils;
+import com.github.javachaos.aoc2022.utils.FileUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class Day01 extends Problem {
         ArrayList<Integer> ints = new ArrayList<>();
         AtomicLong max = new AtomicLong();
         inputData.forEach(x -> {
-            long currentSum = 0;
+            long currentSum;
             if (x.isBlank()) {
                 currentSum = ints.stream().mapToInt(Integer::intValue).sum();
                 if (currentSum > max.get()) {

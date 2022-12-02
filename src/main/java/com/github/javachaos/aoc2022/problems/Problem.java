@@ -1,7 +1,4 @@
-package com.javachaos.aoc2022.problems;
-
-import java.io.FileNotFoundException;
-import java.util.concurrent.atomic.AtomicLong;
+package com.github.javachaos.aoc2022.problems;
 
 public abstract class Problem implements IProblem {
 

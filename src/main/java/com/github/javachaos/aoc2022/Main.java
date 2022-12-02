@@ -1,7 +1,7 @@
-package com.javachaos.aoc2022;
+package com.github.javachaos.aoc2022;
 
-import com.javachaos.aoc2022.problems.Day01;
-import com.javachaos.aoc2022.problems.IProblem;
+import com.github.javachaos.aoc2022.problems.Day01;
+import com.github.javachaos.aoc2022.problems.IProblem;
 
 import java.util.ArrayList;
 
