@@ -39,14 +39,10 @@ public class Day01p2 extends Problem {
     @Override
     public long run() {
         ArrayList<Integer> ints = new ArrayList<>();
-        AtomicLong max = new AtomicLong();
         inputData.forEach(x -> {
             long currentSum;
             if (x.isBlank()) {
                 currentSum = ints.stream().mapToInt(Integer::intValue).sum();
-                if (currentSum > max.get()) {
-                    max.set(currentSum);
-                }
                 sums.add((int)currentSum);
                 ints.clear();
             } else {
@@ -57,7 +53,7 @@ public class Day01p2 extends Problem {
         });
         return sums.stream()               // get a stream
         .sorted(Collections.reverseOrder())// sort desc.
-        .mapToInt(Integer::intValue)       // get IntStream
+        .mapToInt(Integer::intValue)       // get In
         .limit(3)                          // limit to top 3
         .sum();                            // calc the sum.
     }
