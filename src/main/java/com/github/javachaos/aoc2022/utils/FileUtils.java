@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.stream.Stream;
 
 public class FileUtils {
+    private static BufferedReader fr;
+
     public static File getFileFromResource(String fileName) {
         ClassLoader classLoader = FileUtils.class.getClassLoader();
         URL resource = classLoader.getResource(fileName);
@@ -26,9 +28,7 @@ public class FileUtils {
      * @param f the file to read
      */
     public static Stream<String> lines(File f) throws FileNotFoundException {
-        BufferedReader fr = new BufferedReader(new FileReader(f));
+        fr = new BufferedReader(new FileReader(f));
         return fr.lines();
     }
-
-
 }
