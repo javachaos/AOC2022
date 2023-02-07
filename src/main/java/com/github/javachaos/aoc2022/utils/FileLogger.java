@@ -39,15 +39,16 @@ public class FileLogger {
         return f;
     }
 
-    private void write(File f, String line) throws IOException {
+    private void write(String line) throws IOException {
         fw.println(line);
         fw.flush();
     }
 
     public void log(String line) {
         try {
-            write(logFile(), Instant.now() + " [AOC2022]: " + line);
-            System.out.println(Instant.now() + " [AOC2022]: " + line);
+            String logEntry = Instant.now() + "-[AOC2022]: " + line;
+            write(logEntry);
+            System.out.println(logEntry);
         } catch (IOException e) {
             e.printStackTrace();
         }
