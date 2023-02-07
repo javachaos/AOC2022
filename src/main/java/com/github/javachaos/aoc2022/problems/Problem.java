@@ -1,8 +1,11 @@
 package com.github.javachaos.aoc2022.problems;
 
+import com.github.javachaos.aoc2022.utils.FileLogger;
+
 public abstract class Problem implements IProblem {
 
     private final String problemName;
+    public final FileLogger LOGGER = FileLogger.getLogger();
 
     public Problem(String problemName) {
         this.problemName = problemName;
@@ -18,12 +21,12 @@ public abstract class Problem implements IProblem {
         long start = System.nanoTime();
         long result = run();
         long end = System.nanoTime();
-        System.out.println(problemName + ": COMPLETED");
+        LOGGER.log(problemName + ": COMPLETED");
         long ns = (end - start);
-        System.out.println("RUNTIME (s) : "+ ((double) ns / 1000000000.0));
-        System.out.println("RUNTIME (ms): "+ ((double) ns / 1000000.0));
-        System.out.println("RUNTIME (µs): "+ ((double) ns / 1000.0));
-        System.out.println("RUNTIME (ns): "+ ns);
+        LOGGER.log("RUNTIME (s) : "+ ((double) ns / 1000000000.0));
+        LOGGER.log("RUNTIME (ms): "+ ((double) ns / 1000000.0));
+        LOGGER.log("RUNTIME (µs): "+ ((double) ns / 1000.0));
+        LOGGER.log("RUNTIME (ns): "+ ns);
 
         print(result);
         done();
@@ -34,6 +37,6 @@ public abstract class Problem implements IProblem {
     protected abstract long run();
 
     protected void print(Number n) {
-        System.out.println("RESULT: "+ n);
+        LOGGER.log("RESULT: "+ n);
     }
 }

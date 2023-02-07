@@ -1,0 +1,59 @@
+package com.github.javachaos.aoc2022.utils;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.Instant;
+
+public class FileLogger {
+    private static PrintWriter fw;
+    private static final String LOG_FILENAME = "./logging.log";
+    private static FileLogger instance;
+
+    private FileLogger() {
+        try {
+            fw = new PrintWriter(logFile());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static FileLogger getLogger() {
+        if (instance == null) {
+            instance = new FileLogger();
+        }
+        return instance;
+    }
+
+    private File logFile() {
+        File f = null;
+        try {
+            f = new File(LOG_FILENAME);
+            if (!f.exists()) {
+                f.createNewFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return f;
+    }
+
+    private void write(File f, String line) throws IOException {
+        fw.println(line);
+        fw.flush();
+    }
+
+    public void log(String line) {
+        try {
+            write(logFile(), Instant.now() + " [AOC2022]: " + line);
+            System.out.println(Instant.now() + " [AOC2022]: " + line);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void logException(Throwable t) {
+        log("Exception: " + t.getMessage());
+    }
+}
