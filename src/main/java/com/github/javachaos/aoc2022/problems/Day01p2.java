@@ -8,8 +8,7 @@ import java.util.Collections;
 import java.util.stream.Stream;
 
 public class Day01p2 extends Problem {
-    
-    private Stream<String> inputData;
+
     private ArrayList<Integer> sums;
 
     public Day01p2() {
@@ -18,17 +17,12 @@ public class Day01p2 extends Problem {
 
     @Override
     public void init() {
-        try {
-            inputData = FileUtils.lines(FileUtils.getFileFromResource("day1_2_input.txt"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadInputData("day1_2_input.txt");
         sums = new ArrayList<>();
     }
 
     @Override
     protected void done() {
-        inputData.close();
     }
 
     @Override

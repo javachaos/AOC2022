@@ -1,10 +1,17 @@
 package com.github.javachaos.aoc2022.problems;
 
 import com.github.javachaos.aoc2022.utils.FileLogger;
+import com.github.javachaos.aoc2022.utils.FileUtils;
+
+import java.io.IOException;
+import java.util.stream.Stream;
 
 public abstract class Problem implements IProblem {
 
-    private final String problemName;
+
+    protected Stream<String> inputData;
+
+    protected final String problemName;
     public final FileLogger LOGGER = FileLogger.getLogger();
 
     public Problem(String problemName) {
@@ -14,6 +21,14 @@ public abstract class Problem implements IProblem {
      * Initialize data structures not directly related to the problem.
      */
     protected abstract void init();
+
+    protected void loadInputData(final String filename) {
+        try {
+            inputData = FileUtils.lines(FileUtils.getFileFromResource(filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void executeProblem() {
@@ -27,16 +42,16 @@ public abstract class Problem implements IProblem {
         LOGGER.log("RUNTIME (ms): "+ ((double) ns / 1000000.0));
         LOGGER.log("RUNTIME (µs): "+ ((double) ns / 1000.0));
         LOGGER.log("RUNTIME (ns): "+ ns);
+        LOGGER.log("RESULT: "+ result);
 
-        print(result);
         done();
+        if (inputData != null) {
+            inputData.close();
+        }
     }
 
     protected abstract void done();
 
     protected abstract long run();
 
-    protected void print(Number n) {
-        LOGGER.log("RESULT: "+ n);
-    }
 }

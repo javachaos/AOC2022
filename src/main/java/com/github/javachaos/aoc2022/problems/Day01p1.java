@@ -10,24 +10,17 @@ import java.util.stream.Stream;
 
 public class Day01p1 extends Problem {
 
-    private Stream<String> inputData;
-
     public Day01p1() {
         super("--- Day 1:1 Calorie Counting ---");
     }
 
     @Override
     public void init() {
-        try {
-            inputData = FileUtils.lines(FileUtils.getFileFromResource("day1_1_input.txt"));
-        } catch (IOException e) {
-            Main.LOGGER.logException(e);
-        }
+        loadInputData("day1_1_input.txt");
     }
 
     @Override
     protected void done() {
-        inputData.close();
     }
 
     @Override
