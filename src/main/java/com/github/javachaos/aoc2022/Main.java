@@ -29,6 +29,10 @@ public class Main {
         problems.add(new Day03p1());
         LOGGER.log("Adding problems: Day03 P2");
         problems.add(new Day03p2());
+        LOGGER.log("Adding problems: Day04 P1");
+        problems.add(new Day04p1());
+        LOGGER.log("Adding problems: Day04 P2");
+        problems.add(new Day04p2());
 
         //RUN THROUGH ALL PROBLEMS AND EXECUTE THEM!!!
         problems.forEach(IProblem::executeProblem);

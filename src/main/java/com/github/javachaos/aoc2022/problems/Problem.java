@@ -42,7 +42,11 @@ public abstract class Problem implements IProblem {
         LOGGER.log("RUNTIME (ms): "+ ((double) ns / 1000000.0));
         LOGGER.log("RUNTIME (µs): "+ ((double) ns / 1000.0));
         LOGGER.log("RUNTIME (ns): "+ ns);
-        LOGGER.log("RESULT: "+ result);
+        if ((int)(ns / 1000000.0) > 1000) {// Longer than 1 second run time.
+            LOGGER.log("FAILED! Operation took too long, consider making it more efficient.");
+        } else {
+            LOGGER.log("RESULT: " + result);
+        }
 
         done();
         if (inputData != null) {
