@@ -10,7 +10,6 @@ public abstract class Problem implements IProblem {
 
 
     protected Stream<String> inputData;
-
     protected final String problemName;
     public final FileLogger LOGGER = FileLogger.getLogger();
 
