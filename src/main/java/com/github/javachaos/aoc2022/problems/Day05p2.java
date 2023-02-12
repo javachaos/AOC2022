@@ -69,14 +69,14 @@ public class Day05p2 extends Day05p1 {
                 int y = Integer.parseInt(tokens[3]);
                 int z = Integer.parseInt(tokens[5]);
                 int i = 0;
-                if (x == 1 && stacks.get(y - 1).size() > 0) {
+                if (x == 1 && !stacks.get(y - 1).isEmpty()) {
                     stacks.get(z - 1).push(stacks.get(y - 1).pop());
                 } else {
                     ArrayDeque<String> tempQueue = new ArrayDeque<>();
-                    while (stacks.get(y - 1).size() > 0 && i++ < x) {
+                    while (!stacks.get(y - 1).isEmpty() && i++ < x) {
                         tempQueue.offer(stacks.get(y - 1).pop());
                     }
-                    while (tempQueue.size() > 0) {
+                    while (!tempQueue.isEmpty()) {
                         stacks.get(z - 1).push(tempQueue.removeLast());
                     }
                 }
