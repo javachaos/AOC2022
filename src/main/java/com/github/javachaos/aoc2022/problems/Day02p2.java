@@ -37,7 +37,7 @@ public class Day02p2 extends Problem {
 
     @Override
     protected void done() {
-
+        //Unused
     }
 
     //ROCK = 1
@@ -46,9 +46,8 @@ public class Day02p2 extends Problem {
     @Override
     protected long run() {
         AtomicLong result = new AtomicLong(0);
-        inputData.forEachOrdered(s -> {
+        inputData.forEach(s -> {
             long score = 0;
-            boolean isWin = false;
             char[] c = s.toCharArray();
             switch (c[0]) {
                 case 'A' -> {//ROCK
@@ -61,6 +60,8 @@ public class Day02p2 extends Problem {
                         }
                         case 'Z' -> {// WIN
                             score = 8;//PAPER
+                        }
+                        default -> {//unused
                         }
                     }
                 }
@@ -75,6 +76,8 @@ public class Day02p2 extends Problem {
                         case 'Z' -> {// WIN
                             score += 9;//SCISSORS
                         }
+                        default -> {//unused
+                        }
                     }
                 }
                 case 'C' -> {//SCISSORS
@@ -88,10 +91,13 @@ public class Day02p2 extends Problem {
                         case 'Z' -> {// WIN
                             score += 7;//ROCK
                         }
+                        default -> {//unused
+                        }
                     }
                 }
+                default -> {//unused
+                }
             }
-
             result.getAndAdd(score);
         });
         return result.get();

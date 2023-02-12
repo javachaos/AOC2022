@@ -55,6 +55,7 @@ public class Day05p2 extends Day05p1 {
 
     @Override
     protected void done() {
+        //Unused
     }
 
     @Override

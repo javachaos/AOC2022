@@ -6,7 +6,11 @@ import java.net.URL;
 import java.util.stream.Stream;
 
 public class FileUtils {
+    
     private static BufferedReader fr;
+
+    private FileUtils() {
+    }
 
     public static File getFileFromResource(String fileName) {
         ClassLoader classLoader = FileUtils.class.getClassLoader();
@@ -17,9 +21,10 @@ public class FileUtils {
             try {
                 return new File(resource.toURI());
             } catch (URISyntaxException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }
+        return null;
     }
 
     /**

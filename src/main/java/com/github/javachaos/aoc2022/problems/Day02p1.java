@@ -48,6 +48,7 @@ public class Day02p1 extends Problem {
 
     @Override
     protected void done() {
+        //Unused
     }
 
     @Override
@@ -69,6 +70,8 @@ public class Day02p1 extends Problem {
                 case 'Z' -> {//SCISSORS
                     score += 3;
                     isWin = c[0] == 'B';
+                }
+                default -> {//Unused
                 }
             }
 

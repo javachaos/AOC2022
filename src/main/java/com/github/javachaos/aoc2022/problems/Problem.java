@@ -8,12 +8,11 @@ import java.util.stream.Stream;
 
 public abstract class Problem implements IProblem {
 
-
     protected Stream<String> inputData;
     protected final String problemName;
     public final FileLogger LOGGER = FileLogger.getLogger();
 
-    public Problem(String problemName) {
+    protected Problem(String problemName) {
         this.problemName = problemName;
     }
     /**

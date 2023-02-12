@@ -2,20 +2,15 @@ package com.github.javachaos.aoc2022;
 
 import com.github.javachaos.aoc2022.problems.*;
 import com.github.javachaos.aoc2022.utils.FileLogger;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class Main {
-
     public static final FileLogger LOGGER = FileLogger.getLogger();
 
     public static void main(String[] args) {
 
         LOGGER.log("Starting problems!");
         ArrayList<IProblem> problems = new ArrayList<>();
-
         //Add problem here
         LOGGER.log("Adding problems: Day01 P1");
         problems.add(new Day01p1());

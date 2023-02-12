@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.time.Instant;
 
 public class FileLogger {
-    private static PrintWriter fw;
+    private PrintWriter fw;
     private static final String LOG_FILENAME = "./logging.log";
     private static FileLogger instance;
 
@@ -31,7 +31,11 @@ public class FileLogger {
         try {
             f = new File(LOG_FILENAME);
             if (!f.exists()) {
-                f.createNewFile();
+                if (f.createNewFile()) {
+                    log("New logfile created.");
+                } else {
+                    log("Log file exists.");
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();

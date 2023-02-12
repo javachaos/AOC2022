@@ -15,6 +15,7 @@ public class Day03p2 extends Problem {
 
     @Override
     protected void done() {
+        //Unused
     }
 
     @Override

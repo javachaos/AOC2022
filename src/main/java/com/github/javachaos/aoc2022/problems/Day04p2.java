@@ -34,31 +34,11 @@ public class Day04p2 extends Problem {
 
     @Override
     protected void done() {
+        //Unused
     }
 
     @Override
     protected long run() {
-
-        //.234.....  2-4  false b < c
-        //.....678.  6-8
-        //
-        //.23......  2-3 false b < c
-        //...45....  4-5
-
-        //.......89  8-9  !(b > c || b < c)
-        //...45....  4-5 (b <= c && b >= c)
-
-        //....567..  5-7 true
-        //......789  7-9
-        //
-        //
-        //.23456...  2-6 (a < c && b < d && b >= c)
-        //...45678.  4-8
-
-        //.....6789  6-9 (a > c && b > d && a <= d)
-        //...4567..  4-7
-
-
         AtomicInteger count = new AtomicInteger();
         inputData.forEach(s -> {
             String[] elves = s.split(",");

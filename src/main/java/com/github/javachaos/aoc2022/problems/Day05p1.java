@@ -27,8 +27,6 @@ public class Day05p1 extends Problem {
         stack9 = new ArrayDeque<>();
         tempQueue = new ArrayDeque<>();
         stacks = new ArrayList<>();
-
-        //TODO populate stacks...
         //[F]         [L]     [M]
         //[T]     [H] [V] [G] [V]
         //[N]     [T] [D] [R] [N]     [D]
@@ -119,6 +117,7 @@ public class Day05p1 extends Problem {
 
     @Override
     protected void done() {
+        //Unused
     }
 
     protected void prettyPrint(ArrayList<ArrayDeque<String>> stacks) {

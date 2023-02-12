@@ -1,12 +1,7 @@
 package com.github.javachaos.aoc2022.problems;
 
-import com.github.javachaos.aoc2022.Main;
-import com.github.javachaos.aoc2022.utils.FileUtils;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.Stream;
 
 public class Day01p1 extends Problem {
 
