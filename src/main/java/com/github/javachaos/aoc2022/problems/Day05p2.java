@@ -88,7 +88,7 @@ public class Day05p2 extends Day05p1 {
             result.append(d.peek());
         }
         //That's the right answer! You are one gold star closer to collecting enough star fruit. Hurray!
-        LOGGER.log(result.toString());
+        logger.log(result.toString());
         return 0;
     }
 }

@@ -10,7 +10,7 @@ public abstract class Problem implements IProblem {
 
     protected Stream<String> inputData;
     protected final String problemName;
-    public final FileLogger LOGGER = FileLogger.getLogger();
+    public final FileLogger logger = FileLogger.getLogger();
 
     protected Problem(String problemName) {
         this.problemName = problemName;
@@ -34,16 +34,16 @@ public abstract class Problem implements IProblem {
         long start = System.nanoTime();
         long result = run();
         long end = System.nanoTime();
-        LOGGER.log(problemName + ": COMPLETED");
+        logger.log(problemName + ": COMPLETED");
         long ns = (end - start);
-        LOGGER.log("RUNTIME (s) : "+ ((double) ns / 1000000000.0));
-        LOGGER.log("RUNTIME (ms): "+ ((double) ns / 1000000.0));
-        LOGGER.log("RUNTIME (µs): "+ ((double) ns / 1000.0));
-        LOGGER.log("RUNTIME (ns): "+ ns);
+        logger.log("RUNTIME (s) : "+ (ns / 1000000000.0));
+        logger.log("RUNTIME (ms): "+ (ns / 1000000.0));
+        logger.log("RUNTIME (µs): "+ (ns / 1000.0));
+        logger.log("RUNTIME (ns): "+ ns);
         if ((int)(ns / 1000000.0) > 1000) {// Longer than 1 second run time.
-            LOGGER.log("FAILED! Operation took too long, consider making it more efficient.");
+            logger.log("FAILED! Operation took too long, consider making it more efficient.");
         } else {
-            LOGGER.log("RESULT: " + result);
+            logger.log("RESULT: " + result);
         }
 
         done();

@@ -43,19 +43,15 @@ public class FileLogger {
         return f;
     }
 
-    private void write(String line) throws IOException {
+    private void write(String line) {
         fw.println(line);
         fw.flush();
     }
 
     public void log(String line) {
-        try {
-            String logEntry = Instant.now() + "-[AOC2022]: " + line;
-            write(logEntry);
-            System.out.println(logEntry);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String logEntry = Instant.now() + "-[AOC2022]: " + line;
+        write(logEntry);
+        System.out.println(logEntry);
     }
 
     public void logException(Throwable t) {

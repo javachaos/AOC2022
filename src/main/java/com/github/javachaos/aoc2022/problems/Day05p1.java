@@ -7,7 +7,16 @@ import java.util.regex.Pattern;
 
 public class Day05p1 extends Problem {
 
-    protected ArrayDeque<String> stack1, stack2, stack3, stack4, stack5, stack6, stack7, stack8, stack9, tempQueue;
+    protected ArrayDeque<String> stack1;
+    protected ArrayDeque<String> stack2;
+    protected ArrayDeque<String> stack3;
+    protected ArrayDeque<String> stack4;
+    protected ArrayDeque<String> stack5;
+    protected ArrayDeque<String> stack6;
+    protected ArrayDeque<String> stack7;
+    protected ArrayDeque<String> stack8;
+    protected ArrayDeque<String> stack9;
+    protected ArrayDeque<String> tempQueue;
     protected ArrayList<ArrayDeque<String>> stacks;
     public Day05p1() {
         super("--- Day 5:1 Supply Stacks ---");
@@ -121,7 +130,7 @@ public class Day05p1 extends Problem {
     }
 
     protected void prettyPrint(ArrayList<ArrayDeque<String>> stacks) {
-        LOGGER.log(stacks.toString());
+        logger.log(stacks.toString());
     }
 
     @Override
@@ -135,7 +144,7 @@ public class Day05p1 extends Problem {
                 int y = Integer.parseInt(tokens[3]);
                 int z = Integer.parseInt(tokens[5]);
                 int i = 0;
-                while (stacks.get(y - 1).size() > 0 && i++ < x) {
+                while (!stacks.get(y - 1).isEmpty() && i++ < x) {
                     stacks.get(z - 1).push(stacks.get(y - 1).pop());
                 }
             }
@@ -145,7 +154,7 @@ public class Day05p1 extends Problem {
         for (ArrayDeque<String> d : stacks) {//Get the top of each stack and append it to the result.
             result.append(d.peek());
         }
-        LOGGER.log(result.toString());
+        logger.log(result.toString());
         return 0;
     }
 }
