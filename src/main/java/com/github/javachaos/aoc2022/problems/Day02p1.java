@@ -52,7 +52,7 @@ public final class Day02p1 extends Problem {
     }
 
     @Override
-    protected long run() {
+    protected String run() {
         AtomicLong totalScore = new AtomicLong();
         inputData.forEach(s -> {
             long score = 0;
@@ -83,6 +83,6 @@ public final class Day02p1 extends Problem {
             }
             totalScore.addAndGet(score);
         });
-        return totalScore.get();
+        return "" + totalScore.get();
     }
 }

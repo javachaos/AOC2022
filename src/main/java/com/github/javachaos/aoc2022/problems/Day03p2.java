@@ -19,7 +19,7 @@ public final class Day03p2 extends Problem {
     }
 
     @Override
-    protected long run() {
+    protected String run() {
         long result = 0;
         List<String> strings = inputData.toList();
         for (int i = 0; i < 100; i++) {
@@ -42,7 +42,7 @@ public final class Day03p2 extends Problem {
             }
             result += convertToPriority(matching);
         }
-        return result;
+        return "" + result;
     }
 
     private int convertToPriority(char c) {

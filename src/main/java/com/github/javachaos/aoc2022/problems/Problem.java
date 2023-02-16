@@ -29,10 +29,10 @@ public abstract class Problem implements IProblem {
     }
 
     @Override
-    public void executeProblem() {
+    public String executeProblem() {
         init();
         long start = System.nanoTime();
-        long result = run();
+        String result = run();
         long end = System.nanoTime();
         logger.log(problemName + ": COMPLETED");
         long ns = (end - start);
@@ -50,10 +50,11 @@ public abstract class Problem implements IProblem {
         if (inputData != null) {
             inputData.close();
         }
+        return result;
     }
 
     protected abstract void done();
 
-    protected abstract long run();
+    protected abstract String run();
 
 }

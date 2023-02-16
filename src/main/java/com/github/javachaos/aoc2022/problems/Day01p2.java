@@ -23,7 +23,7 @@ public final class Day01p2 extends Problem {
     }
 
     @Override
-    public long run() {
+    public String run() {
         ArrayList<Integer> ints = new ArrayList<>();
         inputData.forEach(x -> {
             long currentSum;
@@ -37,7 +37,7 @@ public final class Day01p2 extends Problem {
                 sums.add(n);
             }
         });
-        return sums.stream()               // get a stream
+        return "" + sums.stream()               // get a stream
         .sorted(Collections.reverseOrder())// sort desc.
         .mapToInt(Integer::intValue)       // get In
         .limit(3)                          // limit to top 3

@@ -38,7 +38,7 @@ public final class Day04p2 extends Problem {
     }
 
     @Override
-    protected long run() {
+    protected String run() {
         AtomicInteger count = new AtomicInteger();
         inputData.forEach(s -> {
             String[] elves = s.split(",");
@@ -59,6 +59,6 @@ public final class Day04p2 extends Problem {
             }
 
         });
-        return count.get();
+        return "" + count.get();
     }
 }

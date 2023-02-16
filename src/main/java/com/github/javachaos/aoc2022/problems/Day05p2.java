@@ -59,7 +59,7 @@ public final class Day05p2 extends Day05p1 {
     }
 
     @Override
-    protected long run() {
+    protected String run() {
         // Precompile regular expression here for extra speed during runtime.
         Pattern p = Pattern.compile("move \\d+ from \\d+ to \\d+"); //move X from Y to Z
         inputData.forEach(s -> {
@@ -87,8 +87,7 @@ public final class Day05p2 extends Day05p1 {
         for (ArrayDeque<String> d : stacks) {//Get the top of each stack and append it to the result.
             result.append(d.peek());
         }
-        //That's the right answer! You are one gold star closer to collecting enough star fruit. Hurray!
-        logger.log(result.toString());
-        return 0;
+
+        return result.toString();
     }
 }

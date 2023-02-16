@@ -70,7 +70,7 @@ public final class Day03p1 extends Problem {
     }
 
     @Override
-    protected long run() {
+    protected String run() {
         AtomicLong result = new AtomicLong(0);
 
         inputData.forEach(p -> {
@@ -91,7 +91,7 @@ public final class Day03p1 extends Problem {
             result.getAndAdd(convertToPriority(matching));
         });
 
-        return result.get();
+        return "" + result.get();
     }
     
     private int convertToPriority(char c) {

@@ -44,7 +44,7 @@ public final class Day02p2 extends Problem {
     //PAPER = 2
     //SCISSORS = 3
     @Override
-    protected long run() {
+    protected String run() {
         AtomicLong result = new AtomicLong(0);
         inputData.forEach(s -> {
             long score = 0;
@@ -100,6 +100,6 @@ public final class Day02p2 extends Problem {
             }
             result.getAndAdd(score);
         });
-        return result.get();
+        return "" + result.get();
     }
 }

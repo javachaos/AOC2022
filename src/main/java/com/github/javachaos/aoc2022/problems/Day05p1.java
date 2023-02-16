@@ -134,7 +134,7 @@ public sealed class Day05p1 extends Problem permits Day05p2 {
     }
 
     @Override
-    protected long run() {
+    protected String run() {
         // Precompile regular expression here for extra speed during runtime.
         Pattern p = Pattern.compile("move \\d+ from \\d+ to \\d+"); //move X from Y to Z
         inputData.forEach(s -> {
@@ -154,7 +154,6 @@ public sealed class Day05p1 extends Problem permits Day05p2 {
         for (ArrayDeque<String> d : stacks) {//Get the top of each stack and append it to the result.
             result.append(d.peek());
         }
-        logger.log(result.toString());
-        return 0;
+        return result.toString();
     }
 }

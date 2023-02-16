@@ -20,7 +20,7 @@ public final class Day01p1 extends Problem {
     }
 
     @Override
-    public long run() {
+    public String run() {
         ArrayList<Integer> ints = new ArrayList<>();
         AtomicLong max = new AtomicLong();
         inputData.forEach(x -> {
@@ -35,7 +35,7 @@ public final class Day01p1 extends Problem {
                 ints.add(Integer.parseInt(x));
             }
         });
-        return max.get();
+        return "" + max.get();
     }
 
 }

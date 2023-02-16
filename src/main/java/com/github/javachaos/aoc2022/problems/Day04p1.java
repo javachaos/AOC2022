@@ -20,7 +20,7 @@ public final class Day04p1 extends Problem {
     }
 
     @Override
-    protected long run() {
+    protected String run() {
         AtomicInteger count = new AtomicInteger();
         inputData.forEach(s -> {
             String[] elves = s.split(",");
@@ -36,6 +36,6 @@ public final class Day04p1 extends Problem {
                 count.getAndIncrement();
             }
         });
-        return count.get();
+        return "" + count.get();
     }
 }
