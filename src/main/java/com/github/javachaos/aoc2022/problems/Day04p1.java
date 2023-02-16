@@ -3,7 +3,7 @@ package com.github.javachaos.aoc2022.problems;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Day04p1 extends Problem {
+public final class Day04p1 extends Problem {
 
     public Day04p1() {
         super("--- Day 4:1 Camp Cleanup ---");

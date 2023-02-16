@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * In how many assignment pairs do the ranges overlap?
  */
-public class Day04p2 extends Problem {
+public final class Day04p2 extends Problem {
 
     public Day04p2() {
         super("--- Day 4:2 Camp Cleanup ---");

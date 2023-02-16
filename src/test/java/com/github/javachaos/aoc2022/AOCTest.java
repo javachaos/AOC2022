@@ -1,14 +1,20 @@
 package com.github.javachaos.aoc2022;
 
 import com.github.javachaos.aoc2022.problems.*;
+import com.github.javachaos.aoc2022.problems.IProblem;
 import com.github.javachaos.aoc2022.utils.FileLogger;
-import java.util.ArrayList;
 
-public class Main {
+import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.Test;
+import java.util.ArrayList;
+import static java.util.concurrent.TimeUnit.SECONDS;
+
+public class AOCTest {
     public static final FileLogger LOGGER = FileLogger.getLogger();
 
-    public static void main(String[] args) {
-
+    @Timeout(value = 10, unit = SECONDS)
+    @Test
+    void test() {
         LOGGER.log("Starting problems!");
         ArrayList<IProblem> problems = new ArrayList<>();
         //Add problem here
@@ -35,6 +41,5 @@ public class Main {
 
         //RUN THROUGH ALL PROBLEMS AND EXECUTE THEM!!!
         problems.forEach(IProblem::executeProblem);
-
     }
 }

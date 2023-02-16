@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class Day05p1 extends Problem {
+public sealed class Day05p1 extends Problem permits Day05p2 {
 
     protected ArrayDeque<String> stack1;
     protected ArrayDeque<String> stack2;

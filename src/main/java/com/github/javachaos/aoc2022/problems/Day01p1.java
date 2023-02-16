@@ -3,7 +3,7 @@ package com.github.javachaos.aoc2022.problems;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Day01p1 extends Problem {
+public final class Day01p1 extends Problem {
 
     public Day01p1() {
         super("--- Day 1:1 Calorie Counting ---");

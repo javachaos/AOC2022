@@ -2,7 +2,7 @@ package com.github.javachaos.aoc2022.problems;
 
 import java.util.List;
 
-public class Day03p2 extends Problem {
+public final class Day03p2 extends Problem {
 
     public Day03p2() {
         super("--- Day 3:2 Rucksack Reorganization ---");

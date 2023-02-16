@@ -2,7 +2,7 @@ package com.github.javachaos.aoc2022.problems;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Day02p2 extends Problem {
+public final class Day02p2 extends Problem {
 
     /**
      * --- Part Two ---

@@ -3,7 +3,7 @@ package com.github.javachaos.aoc2022.problems;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Day01p2 extends Problem {
+public final class Day01p2 extends Problem {
 
     private ArrayList<Integer> sums;
 

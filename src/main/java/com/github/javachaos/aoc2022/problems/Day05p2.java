@@ -4,7 +4,7 @@ package com.github.javachaos.aoc2022.problems;
 import java.util.ArrayDeque;
 import java.util.regex.Pattern;
 
-public class Day05p2 extends Day05p1 {
+public final class Day05p2 extends Day05p1 {
 
 
     /**
