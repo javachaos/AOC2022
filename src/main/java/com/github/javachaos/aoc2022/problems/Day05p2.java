@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 
 public final class Day05p2 extends Day05p1 {
 
-
     /**
      * --- Part Two ---
      * As you watch the crane operator expertly rearrange the crates, you notice the process isn't following your prediction.

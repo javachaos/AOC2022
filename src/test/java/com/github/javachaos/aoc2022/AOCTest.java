@@ -55,5 +55,13 @@ public class AOCTest {
         LOGGER.log("Running problem: Day05 P2");
         Problem p9 = new Day05p2();
         assertEquals("NGCMPJLHV", p9.executeProblem());
+
+        LOGGER.log("Running problem: Day06 P1");
+        Problem p10 = new Day06p1();
+        assertEquals("1109", p10.executeProblem());
+
+        LOGGER.log("Running problem: Day06 P2");
+        Problem p11 = new Day06p2();
+        assertEquals("3965", p11.executeProblem());
     }
 }
